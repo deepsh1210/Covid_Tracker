@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:covid_tracker/services/routes.dart';
+import 'package:covid_tracker/constants.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -32,24 +33,8 @@ class _RegisterState extends State<Register> {
                 onChanged: (value) {
                   email = value;
                 },
-                decoration: InputDecoration(
-                  hintText: 'Enter Your Email',
-                  contentPadding:
-                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.blueAccent, width: 1.0),
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.blueAccent, width: 2.0),
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  ),
-                ),
+                decoration:
+                    kTextFieldDecoration.copyWith(hintText: 'Enter your email'),
               ),
               SizedBox(
                 height: 15.0,
@@ -60,24 +45,8 @@ class _RegisterState extends State<Register> {
                 onChanged: (value) {
                   phone = value;
                 },
-                decoration: InputDecoration(
-                  hintText: 'Enter Your Number',
-                  contentPadding:
-                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.blueAccent, width: 1.0),
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.blueAccent, width: 2.0),
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  ),
-                ),
+                decoration: kTextFieldDecoration.copyWith(
+                    hintText: 'Enter your Number'),
               ),
               SizedBox(
                 height: 15.0,
@@ -88,24 +57,8 @@ class _RegisterState extends State<Register> {
                 onChanged: (value) {
                   password = value;
                 },
-                decoration: InputDecoration(
-                  hintText: 'Enter Your Password',
-                  contentPadding:
-                      EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.blueAccent, width: 1.0),
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide:
-                        BorderSide(color: Colors.blueAccent, width: 2.0),
-                    borderRadius: BorderRadius.all(Radius.circular(32.0)),
-                  ),
-                ),
+                decoration: kTextFieldDecoration.copyWith(
+                    hintText: 'Enter your Password'),
               ),
               SizedBox(
                 height: 24.0,

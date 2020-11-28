@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:covid_tracker/Screens/Home_Screen.dart';
 import 'package:covid_tracker/Screens/SearchCountry.dart';
 import 'package:covid_tracker/Screens/CountryStats.dart';
-import 'package:covid_tracker/Screens/Totals.dart';
+import 'package:covid_tracker/Screens/UserInfo.dart';
 
 class Routing extends StatefulWidget {
   @override
@@ -11,12 +11,7 @@ class Routing extends StatefulWidget {
 }
 
 class _RoutingState extends State<Routing> {
-  final myPages = [
-    HomeScreen(),
-    Statistics(),
-    CountryStats(),
-    Info(),
-  ];
+  final myPages = [HomeScreen(), Statistics(), CountryStats(), UserInfo()];
   int selectedPage = 0;
   PageController pageController = PageController();
   @override
@@ -41,7 +36,7 @@ class _RoutingState extends State<Routing> {
             Icon(Icons.home, size: 30, color: Colors.white),
             Icon(Icons.insert_chart, size: 30, color: Colors.white),
             Icon(Icons.format_list_bulleted, size: 30, color: Colors.white),
-            Icon(Icons.info, size: 30, color: Colors.white),
+            Icon(Icons.account_circle, size: 30, color: Colors.white),
           ],
           color: Color(0xFF473F97),
           buttonBackgroundColor: Colors.blueAccent,
