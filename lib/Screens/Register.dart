@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:covid_tracker/services/routes.dart';
 import 'package:covid_tracker/constants.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'UserInfo.dart';
 
 class Register extends StatefulWidget {
   @override
@@ -9,7 +11,10 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  final _firestore = FirebaseFirestore.instance;
   final _auth = FirebaseAuth.instance;
+  String fname;
+  String lname;
   String email;
   String password;
   String phone;
@@ -23,10 +28,40 @@ class _RegisterState extends State<Register> {
           FocusScope.of(context).requestFocus(FocusNode());
         },
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(30.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Row(
+                children: [
+                  Expanded(
+                    child: TextField(
+                      onChanged: (value) {
+                        fname = value;
+                      },
+                      textAlign: TextAlign.center,
+                      decoration:
+                          kTextFieldDecoration.copyWith(hintText: 'First Name'),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 25.0,
+                  ),
+                  Expanded(
+                    child: TextField(
+                      onChanged: (value) {
+                        lname = value;
+                      },
+                      textAlign: TextAlign.center,
+                      decoration:
+                          kTextFieldDecoration.copyWith(hintText: 'Last Name'),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(
+                height: 25.0,
+              ),
               TextField(
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
@@ -37,7 +72,7 @@ class _RegisterState extends State<Register> {
                     kTextFieldDecoration.copyWith(hintText: 'Enter your email'),
               ),
               SizedBox(
-                height: 15.0,
+                height: 25.0,
               ),
               TextField(
                 keyboardType: TextInputType.phone,
@@ -49,7 +84,7 @@ class _RegisterState extends State<Register> {
                     hintText: 'Enter your Number'),
               ),
               SizedBox(
-                height: 15.0,
+                height: 25.0,
               ),
               TextField(
                 obscureText: true,
@@ -84,6 +119,15 @@ class _RegisterState extends State<Register> {
                     ),
                     onPressed: () async {
                       try {
+                        _firestore.collection('Users').add(
+                          {
+                            'Email': email,
+                            'Fname': fname,
+                            'Lname': lname,
+                            'Phone': int.parse(phone)
+                          },
+                        );
+
                         final newUser =
                             await _auth.createUserWithEmailAndPassword(
                                 email: email, password: password);
@@ -100,7 +144,7 @@ class _RegisterState extends State<Register> {
                     },
                   ),
                 ),
-              )
+              ),
             ],
           ),
         ),

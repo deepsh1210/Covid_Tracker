@@ -8,8 +8,11 @@ class UserInfo extends StatefulWidget {
 class _UserInfoState extends State<UserInfo> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.redAccent,
+    return Scaffold(
+      backgroundColor: Colors.redAccent,
+      body: Column(
+        children: [],
+      ),
     );
   }
 }
