@@ -64,14 +64,15 @@ class _StatisticsState extends State<Statistics> {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(50.0),
-                          topRight: Radius.circular(50.0),
-                        ),
-                        gradient: LinearGradient(
-                          colors: colors1,
-                          stops: stops,
-                        )),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50.0),
+                        topRight: Radius.circular(50.0),
+                      ),
+                      gradient: LinearGradient(
+                        colors: colors1,
+                        stops: stops,
+                      ),
+                    ),
                     child: Row(
                       children: <Widget>[
                         Padding(
