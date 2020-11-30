@@ -9,7 +9,7 @@ class Load extends StatefulWidget {
 class _LoadState extends State<Load> {
   @override
   Widget build(BuildContext context) {
-    return SpinKitDoubleBounce(
+    return SpinKitChasingDots(
       color: Colors.black,
       size: 100.0,
     );

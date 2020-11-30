@@ -1,13 +1,13 @@
-import 'package:covid_tracker/Screens/WelcomeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'WelcomeScreen.dart';
 
-class UserInfo extends StatefulWidget {
+class Profile extends StatefulWidget {
   @override
-  _UserInfoState createState() => _UserInfoState();
+  _ProfileState createState() => _ProfileState();
 }
 
-class _UserInfoState extends State<UserInfo> {
+class _ProfileState extends State<Profile> {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   void _signOut() async {
