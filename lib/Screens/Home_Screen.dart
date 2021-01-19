@@ -156,9 +156,8 @@ class _HomeScreenState extends State<HomeScreen> {
           Column(
             children: <Widget>[
               Padding(
-                padding:
-                    EdgeInsets.all(MediaQuery.of(context).size.width / 27.4),
-                child: TextWidget('PREVENTION', 25.0, Colors.black),
+                padding: EdgeInsets.all(MediaQuery.of(context).size.width / 15),
+                child: TextWidget('PREVENTION', 40.0, Colors.black),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -167,7 +166,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: <Widget>[
                       Image.asset(
                         'images/closeContact.png',
-                        height: MediaQuery.of(context).size.width / 4.11,
+                        height: MediaQuery.of(context).size.width / 4,
                       ),
                       Text(
                         'Avoid Close',
@@ -179,7 +178,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: <Widget>[
                       Image.asset(
                         'images/washHands.jpg',
-                        height: MediaQuery.of(context).size.width / 4.11,
+                        height: MediaQuery.of(context).size.width / 4,
                       ),
                       Text(
                         'Clean your hands',
@@ -193,7 +192,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     children: <Widget>[
                       Image.asset(
                         'images/faceMask.png',
-                        height: MediaQuery.of(context).size.width / 4.11,
+                        height: MediaQuery.of(context).size.width / 4,
                       ),
                       Text(
                         'Wear a',
@@ -208,9 +207,9 @@ class _HomeScreenState extends State<HomeScreen> {
               GestureDetector(
                 child: Padding(
                   padding:
-                      EdgeInsets.all(MediaQuery.of(context).size.width / 27.4),
+                      EdgeInsets.all(MediaQuery.of(context).size.width / 20),
                   child: Container(
-                    height: MediaQuery.of(context).size.width / 3.42,
+                    height: MediaQuery.of(context).size.width / 3,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(30.0),
                       gradient: LinearGradient(

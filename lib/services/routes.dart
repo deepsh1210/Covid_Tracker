@@ -1,6 +1,5 @@
 import 'package:covid_tracker/Screens/profile.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:covid_tracker/Screens/Home_Screen.dart';
 import 'package:covid_tracker/Screens/SearchCountry.dart';
@@ -12,7 +11,7 @@ class Routing extends StatefulWidget {
 }
 
 class _RoutingState extends State<Routing> {
-  final myPages = [HomeScreen(), Statistics(), CountryStats(), Profile()];
+  final myPages = [HomeScreen(), Statistics(), CountryStats(), Info()];
   int selectedPage = 0;
   PageController pageController = PageController();
   @override
